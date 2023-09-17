@@ -1,7 +1,7 @@
 FROM gradle:8.3.0-jdk17-alpine as builder
 WORKDIR /app
 COPY . /app
-RUN ./identity-service/gradlew bootJar
+RUN ./identity-service/gradlew build
 
 FROM gradle:8.3.0-jdk17-alpine
 WORKDIR /app
