@@ -1,7 +1,33 @@
 spring:
-  r2dbc:
+  main:
+    web-application-type: reactive
+  data:
+    mongodb:
+      uri: mongodb://yourMongoDBUsername:yourMongoDBPassword@localhost:27017/yourDatabaseName
+#  h2:
+#    console:
+#      enabled: false
+  sql:
+    init:
+      mode: never
 
-    url: r2dbc:h2:file:///./testdb
-#    url: r2dbc:postgresql://localhost:5432/postgres
-    username: sa
-    password:
+server:
+  port: 8080 # Change this to your preferred port number
+
+logging:
+  level:
+    root: INFO # Adjust logging levels as needed
+springdoc:
+  show-login-endpoint: true
+  show-actuator: true
+  swagger-ui:
+    show-common-extensions: true
+    show-extensions: true
+  api-docs:
+    groups:
+      enabled: true
+    resolve-schema-properties: true
+  default-support-form-data: true
+  model-and-view-allowed: true
+  writer-with-default-pretty-printer: true
+  writer-with-order-by-keys: true

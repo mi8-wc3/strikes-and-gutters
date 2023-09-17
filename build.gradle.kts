@@ -43,16 +43,25 @@ subprojects {
     }
 
     dependencies {
-        implementation("org.springframework.boot:spring-boot-starter-actuator:3.1.3")
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+        implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.3")
+
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-r2dbc
+        implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.1.3")
+// https://mvnrepository.com/artifact/org.mockito/mockito-core
+implementation("org.mockito:mockito-core:5.5.0")
+
+//        implementation("org.springframework.boot:spring-boot-starter-actuator:3.1.3")
 //        implementation("org.springframework.boot:spring-boot-starter-batch:3.1.3")
         implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.1.3")
-        implementation("org.springframework.boot:spring-boot-starter-mail:3.1.3")
-        implementation("org.springframework.boot:spring-boot-starter-quartz:3.1.3")
+//        implementation("org.springframework.boot:spring-boot-starter-mail:3.1.3")
+//        implementation("org.springframework.boot:spring-boot-starter-quartz:3.1.3")
         implementation("org.springframework.boot:spring-boot-starter-security:3.1.3")
         implementation("org.springframework.boot:spring-boot-starter-validation:3.1.3")
         implementation("org.springframework.boot:spring-boot-starter-webflux:3.1.3")
         implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.2.0")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2")
+
         implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:1.2.2")
         runtimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.9.10")
         runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.3")
@@ -62,7 +71,7 @@ subprojects {
         testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.3")
         testImplementation("org.springframework.boot:spring-boot-testcontainers:3.1.3")
         testImplementation("io.projectreactor:reactor-test:3.5.9")
-        testImplementation("org.springframework.batch:spring-batch-test:5.0.3")
+        implementation("org.springframework.batch:spring-batch-core:5.0.3")
         testImplementation("org.springframework.restdocs:spring-restdocs-webtestclient:3.0.0")
         testImplementation("org.springframework.security:spring-security-test:6.1.3")
         testImplementation("org.testcontainers:r2dbc:1.19.0")
