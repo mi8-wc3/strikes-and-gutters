@@ -19,8 +19,8 @@ class CustomUserDetailsService(
     @Transactional(readOnly = true)
     override fun findByUsername(username: String): Mono<UserDetails> {
         return userRepository.findByUsername(username)
-                ?.switchIfEmpty(Mono.error(UsernameNotFoundException("User not found")))
-                ?.map { customUserDetails ->
+            .switchIfEmpty(Mono.error(UsernameNotFoundException("User not found")))
+                .map { customUserDetails ->
                     User.withUsername(customUserDetails.username)
                         .password("{bcrypt}" + customUserDetails.password)
                         .authorities(customUserDetails.authorities)

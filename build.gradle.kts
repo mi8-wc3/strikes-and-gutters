@@ -9,6 +9,7 @@ plugins {
     kotlin("plugin.spring") version "1.9.10"
 }
 
+
 group = "app.mi8qa"
 version = "0.0.1-SNAPSHOT"
 
@@ -49,7 +50,7 @@ subprojects {
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-r2dbc
         implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.1.3")
 // https://mvnrepository.com/artifact/org.mockito/mockito-core
-implementation("org.mockito:mockito-core:5.5.0")
+        implementation("org.mockito:mockito-core:5.5.0")
 
 //        implementation("org.springframework.boot:spring-boot-starter-actuator:3.1.3")
 //        implementation("org.springframework.boot:spring-boot-starter-batch:3.1.3")
